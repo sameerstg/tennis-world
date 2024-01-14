@@ -354,6 +354,7 @@ public class Player : MonoBehaviour {
 		
 		//check if this is the serve, or if we're just hitting the ball during the game and set the ball velocity
 		if(lastFillAmount < 0){
+			rb.isKinematic = false;
 			rb.velocity = direction * force + Vector3.up * upForce;
 		}
 		else{			
