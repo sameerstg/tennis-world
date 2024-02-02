@@ -7,9 +7,11 @@ using UnityEngine;
 //color scheme consisting of a floor, background and court color
 [System.Serializable]
 public class ColorScheme{
+	public string themeName;
 	public Color floor;
 	public Color background;
 	public Color court;
+	public Material groundFloorMat;
 }
 
 public class GameManager : MonoBehaviour {
@@ -49,7 +51,8 @@ public class GameManager : MonoBehaviour {
 	public Color streakGoneColor;
 	public ColorScheme[] colorSchemes;
 	public Material floor;
-	public Material stadium;
+	public Renderer groundFloor;
+    public Material stadium;
 	public Material court;
 	
 	public AudioSource scorePointAudio;
@@ -110,10 +113,12 @@ public class GameManager : MonoBehaviour {
 	void SetColorScheme(){
 		//assign the colors from a randomly picked color scheme
 		int random = Random.Range(0, colorSchemes.Length);
-		
+
+		random = 0;
 		floor.color = colorSchemes[random].floor;
 		stadium.color = colorSchemes[random].background;
 		court.color = colorSchemes[random].court;
+		groundFloor.material = colorSchemes[random].groundFloorMat;
 	}
 	
 	//make the match info object, assign match info and continue to the dance scene
