@@ -11,6 +11,7 @@ public class Theme{
 	public Color floor;
 	public Color background;
 	public Color court;
+	public Color chair;
 	public Material groundFloorMat;
 	public GameObject extras;
 }
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour {
 	public Renderer groundFloor;
     public Material stadium;
 	public Material court;
+	public Material chair;
 	
 	public AudioSource scorePointAudio;
 	public AudioSource losePointAudio;
@@ -87,7 +89,7 @@ public class GameManager : MonoBehaviour {
 	
 	[HideInInspector]
 	public int bonusDiamonds;
-	
+	public int themeIndex;
 	void Awake(){		
 		canvas.SetActive(true);
 	}
@@ -115,10 +117,11 @@ public class GameManager : MonoBehaviour {
 		//assign the colors from a randomly picked color scheme
 		int random = Random.Range(0, colorSchemes.Length);
 
-		random = 0;
+		random = themeIndex;
 		floor.color = colorSchemes[random].floor;
 		stadium.color = colorSchemes[random].background;
 		court.color = colorSchemes[random].court;
+		chair.color = colorSchemes[random].chair;
 		groundFloor.material = colorSchemes[random].groundFloorMat;
 		colorSchemes[random].extras?.SetActive(true); 
 	}
