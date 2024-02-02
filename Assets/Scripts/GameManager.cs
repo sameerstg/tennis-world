@@ -115,9 +115,9 @@ public class GameManager : MonoBehaviour {
 	
 	void SetColorScheme(){
 		//assign the colors from a randomly picked color scheme
-		int random = Random.Range(0, colorSchemes.Length);
+		int random = Random.Range(0, 3);
 
-		random = themeIndex;
+		//random = themeIndex;
 		floor.color = colorSchemes[random].floor;
 		stadium.color = colorSchemes[random].background;
 		court.color = colorSchemes[random].court;
