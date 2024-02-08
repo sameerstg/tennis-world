@@ -33,12 +33,12 @@ public class ModifyOutfit : MonoBehaviour
         if (!player)
         {
             int index = PlayerPrefs.GetInt("Match");
-            outfit = Resources.Load<Outfit>("Outfit_" + index);
+            outfit = Resources.Load<Outfit>("Opponent\\Outfit_" + index);
         }
         else
         {
             int index = PlayerPrefs.GetInt("Player");
-            outfit = Resources.Load<Outfit>("Player_" + index);
+            outfit = Resources.Load<Outfit>("Player\\Player_" + index);
         }
 
         SetOutfit(false);
@@ -47,7 +47,7 @@ public class ModifyOutfit : MonoBehaviour
     //initialize the outfit using an index from outside of this class
     public void Initialize(int index)
     {
-        outfit = Resources.Load<Outfit>("Outfit_" + index);
+        outfit = Resources.Load<Outfit>("Opponent\\Outfit_" + index);
         SetOutfit(false);
     }
 

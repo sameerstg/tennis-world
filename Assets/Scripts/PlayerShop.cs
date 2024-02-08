@@ -66,7 +66,7 @@ public class PlayerShop : MonoBehaviour {
 		//load all characters directly from the resources folder
 		//instantiates one character for each unlockable outfit
 		while(!doneLoading){
-			Outfit next = Resources.Load<Outfit>("Player_" + mannequinCount);
+			Outfit next = Resources.Load<Outfit>("Player\\Player_" + mannequinCount);
 			
 			if(next != null){
 				GameObject newMannequin = Instantiate(playerPrefab, pos, playerPrefab.transform.rotation);
