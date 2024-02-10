@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New outfit", menuName = "Character/Outfit")]
 public class Outfit : ScriptableObject{
@@ -18,4 +16,8 @@ public class Outfit : ScriptableObject{
 	public Material shoes;
 	public Material racket;
 	public Material hair;
+    public bool dontChangeHatColor;
+    public bool dontChangeHairColor;
+    public bool backpack;
+	public int backpackType;
 }

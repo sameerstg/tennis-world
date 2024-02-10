@@ -55,8 +55,14 @@ public class PlayerShop : MonoBehaviour {
 		if(playerPrefab == null)
 			Debug.LogWarning("No player prefab in resources");
 	}
-	
-	void Start(){
+	[ContextMenu("give")]
+	public void Give()
+	{
+       PlayerPrefs.SetInt("Diamonds",100);
+		UpdateDiamondsLabel();
+
+    }
+    void Start(){
 		//diamonds to unlock all players:
 		//PlayerPrefs.SetInt("Diamonds", 10000);
 		
@@ -160,10 +166,11 @@ public class PlayerShop : MonoBehaviour {
 		
 		if(current < characters.Length)
 			nameLabel.text = characters[current].name;
-		
-		bool unlocked = PlayerPrefs.GetInt("Unlocked" + current) == 1 || current < 4;
-		
-		unlockButton.SetActive(!unlocked);
+
+        //bool unlocked = PlayerPrefs.GetInt("Unlocked" + current) == 1 || current < 4;
+        bool unlocked = PlayerPrefs.GetInt("Unlocked" + current) == 1 || current == 0;
+
+        unlockButton.SetActive(!unlocked);
 		
 		priceLabel.text = characters[current].price + "";
 		

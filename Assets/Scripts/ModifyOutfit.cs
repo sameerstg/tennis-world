@@ -14,6 +14,7 @@ public class ModifyOutfit : MonoBehaviour
     public GameObject glasses;
     public GameObject[] hats;
     public GameObject[] hair;
+    public GameObject[] backpacks;
     public GameObject skirt;
 
     public int rendererPantsIndex = 0;
@@ -87,15 +88,24 @@ public class ModifyOutfit : MonoBehaviour
             character.materials = currentMaterials;
             racket.material = outfit.racket;
 
-            for (int i = 0; i < hair.Length; i++)
+            if (!outfit.dontChangeHairColor)
             {
-                hair[i].GetComponent<Renderer>().material = outfit.hair;
+                for (int i = 0; i < hair.Length; i++)
+                {
+                    hair[i].GetComponent<Renderer>().material = outfit.hair;
+                }
             }
+
         }
 
         for (int i = 0; i < hair.Length; i++)
         {
             hair[i].SetActive(outfit.hairType == i);
+        }
+
+        for (int i = 0; i < backpacks.Length; i++)
+        {
+            backpacks[i].SetActive(outfit.backpackType == i && outfit.backpack);
         }
 
         skirt.SetActive(outfit.female);
@@ -104,14 +114,27 @@ public class ModifyOutfit : MonoBehaviour
         {
             if (i == outfit.hatType)
             {
-                if (editor)
+                if (!outfit.dontChangeHatColor)
                 {
-                    hatRenderers[i].sharedMaterial = outfit.hatMat;
+                    try
+                    {
+                        if (editor)
+                        {
+                            hatRenderers[i].sharedMaterial = outfit.hatMat;
+                        }
+                        else
+                        {
+                            hatRenderers[i].material = outfit.hatMat;
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                        hatRenderers = null;
+                    }
+                    
                 }
-                else
-                {
-                    hatRenderers[i].material = outfit.hatMat;
-                }
+
 
                 hats[i].SetActive(true);
 
