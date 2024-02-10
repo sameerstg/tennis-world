@@ -6938,16 +6938,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32859dc90988ede48a3b7baa89014de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  turnSpeed: 6
-  ballRange: 4
+  speed: 4
+  turnSpeed: 4
+  ballRange: 1.5
   force: 12
   upForce: 8.5
-  moveRange: 4.3
+  moveRange: 2
   powerbarSpeedMin: 4
   powerbarSpeedMax: 4.5
   powerbarMaxSlowdown: 15
-  ballMoveSpeed: 10
+  ballMoveSpeed: 20.57
   anim: {fileID: 4407092387854475601}
   head: {fileID: 4407092386578189233}
   lookAt: {fileID: 0}
@@ -8965,7 +8965,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7208756822552023148, guid: 105afa31a383ca74dbcf752aedb2fd3d, type: 3}
+  - {fileID: 2100000, guid: 9ea8e994a4103b545b47b88877c45015, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

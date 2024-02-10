@@ -1,0 +1,23 @@
+Speed = 8
+Turn Speed = 6
+Ball Range = 4
+Force = 12
+Up Force = 8.5
+Move Range = 4.3
+Powerbar Speed Min = 4
+Powerbar Speen Max = 4.5
+Powerbar Max Slowdown = 15
+Ball Move Speed = 10
+
+
+
+Speed = 4,6
+Turn Speed = 4
+Ball Range = 1,2
+Force = 12
+Up Force = 8.5
+Move Range = 2
+Powerbar Speed Min = 4
+Powerbar Speen Max = 4.5
+Powerbar Max Slowdown = 15
+Ball Move Speed = 15
